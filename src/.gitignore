@@ -1,0 +1,30 @@
+# Ignore os diretórios bin e obj
+bin/
+obj/
+
+# Ignore os arquivos de solução do Visual Studio
+*.sln
+
+# Ignore os arquivos de configuração do Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# Ignore arquivos de build do .NET
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Ignore pacotes gerados pelo NuGet
+*.nupkg
+# Ignore pacotes de cache do NuGet
+.nuget/
+# Ignore arquivos de lock de pacotes
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignorar arquivos temporários de build
+.DS_Store
+Thumbs.db
