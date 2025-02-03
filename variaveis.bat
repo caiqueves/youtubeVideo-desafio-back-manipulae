@@ -1,6 +1,6 @@
 @echo off
 :: Definir variáveis de ambiente
-set api_key="AIzaSyBjsMq1xgQcj9ZQfhw-R4oXRibZi1FUouc"
+set api_key=""
 
 :: Exibir as variáveis para confirmação
 echo Variáveis de ambiente configuradas:
