@@ -56,7 +56,7 @@ namespace YoutubeVideo.Worker.Services
                             IsDeleted = false,
 
                         };
-                        Console.WriteLine(JsonConvert.SerializeObject(video));
+
                         if (video.PublishedAt.Year == 2025)
                         {
                             if (VideosRepository.GetVideoTitle(video.Title).Select().Length == 0)

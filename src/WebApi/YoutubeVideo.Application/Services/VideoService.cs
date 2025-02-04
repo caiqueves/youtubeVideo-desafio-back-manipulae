@@ -63,6 +63,7 @@ public class VideoService : IVideoService
                 }
 
                 filterVideoResponse.StatusCode = 200;
+                filterVideoResponse.Videos = videoFilters;
                 filterVideoResponse.Message = "Filtro realizado com sucesso.";
 
                 return filterVideoResponse;

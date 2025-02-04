@@ -15,11 +15,11 @@ namespace YoutubeVideo.Data.Repositories
         {
             var videos = new List<Video>();
             using (var connection = new SqliteConnection(_connectionString))
-            {
+        {
                 await connection.OpenAsync();
                 var command = connection.CreateCommand();
                 command.CommandText = "SELECT * FROM Videos WHERE IsDeleted = 0";
-
+                           
                 using (var reader = await command.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
@@ -36,7 +36,7 @@ namespace YoutubeVideo.Data.Repositories
                             Link = reader.GetString(7),
                             IsDeleted = reader.GetBoolean(8)
                         });
-                    }
+        }
                 }
             }
             return videos.AsQueryable();
@@ -52,7 +52,7 @@ namespace YoutubeVideo.Data.Repositories
                 command.Parameters.AddWithValue("@id", id);
 
                 using (var reader = await command.ExecuteReaderAsync())
-                {
+        {
                     if (await reader.ReadAsync())
                     {
                         return new Video
@@ -76,7 +76,7 @@ namespace YoutubeVideo.Data.Repositories
         public async Task AddAsync(Video video)
         {
             using (var connection = new SqliteConnection(_connectionString))
-            {
+        {
                 await connection.OpenAsync();
                 var command = connection.CreateCommand();
                 command.CommandText = "INSERT INTO Videos (Id, Title, Description, ChannelTitle, Author, Duration, PublishedAt, Link, IsDeleted) VALUES (@id, @title, @desc, @channel, @author, @duration, @published, @link, @deleted)";
@@ -97,7 +97,7 @@ namespace YoutubeVideo.Data.Repositories
         public async Task UpdateAsync(Video video)
         {
             using (var connection = new SqliteConnection(_connectionString))
-            {
+        {
                 await connection.OpenAsync();
                 var command = connection.CreateCommand();
                 command.CommandText = "UPDATE Videos SET Title = @title, Description = @desc, ChannelTitle = @channel, Author = @author, Duration = @duration, PublishedAt = @published, Link = @link, IsDeleted = @deleted WHERE Id = @id";
@@ -126,6 +126,6 @@ namespace YoutubeVideo.Data.Repositories
                 await command.ExecuteNonQueryAsync();
             }
         }
- 
+
     }
 }

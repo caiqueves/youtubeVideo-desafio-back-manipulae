@@ -48,6 +48,7 @@ namespace YoutubeVideo.Worker
                     }
                 }
 
+                // Wait 10 minutes before fetching new videos
                 await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
             }
         }
